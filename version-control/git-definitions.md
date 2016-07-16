@@ -21,3 +21,5 @@ A commit shows the point of change and records it in the repository.
 
 * What is a merge conflict?
 A merge conflict is when two different branches work on the same file and change the same part of the same file. 
+
+Hello Teacher
