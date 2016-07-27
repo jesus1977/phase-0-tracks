@@ -1,0 +1,23 @@
+section {
+	position: relative;
+	margin-left: 70px;
+	margin-top: 70px;
+}
+
+#octopus {
+	position: absolute;
+	left-margin: 40px;
+	margin-top: 40px;
+}
+#hat {
+	position: fixed;
+	margin-left: -20px;
+	margin-top: -20px;
+	z-index: 10;
+}
+#glasses {
+	position: absolute;
+	margin-top: 140px;
+	margin-left: 40px;
+	z-index: 10;
+}
