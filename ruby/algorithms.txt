@@ -1,0 +1,36 @@
+Elevator:
+
+	-Staionairy and ready to work check componets
+	- Wait for push arrow up or down
+	if  going up is pushed
+	  - Light up arrow going up
+	  	-open elevator door
+		-Wait for floor command to use elvator
+			- close elvator door
+			if more than one floor is pushed go to nearest floor first
+			-close elvator door 
+			- go to floor
+			- open door
+
+Making a sandwich:
+
+	- Go to cabniet 
+	- open door to cabniet 
+	- Grap bread 
+	- Read date on bread
+		if date is stale 
+		  -throw away
+		otherwise 
+		  - grab bread 
+    Place bread on kitchen table
+
+    - Go to refrigerator and open door
+    - Look for turkey
+    - Grab turkey
+    - place turkey on table
+
+    - Go to kitchen draw and open it find knife
+    - Slice turkey and place on sandwich
+    - Slice sandwich in half
+    - Eat sandwich
+
