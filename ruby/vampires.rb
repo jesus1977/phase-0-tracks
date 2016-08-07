@@ -86,7 +86,7 @@ while num_employees > 0
 
 	end	
 
-	puts "The reason we axed you these questions is cuz we wanted to know if you were a vampire and the result is: " + vampire
+	puts "The reason we asked you these questions is because we wanted to know if you were a vampire and the result is: " + vampire
 
 
 num_employees -= 1
