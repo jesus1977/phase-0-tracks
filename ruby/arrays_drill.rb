@@ -1,3 +1,5 @@
+# _____ Release 1 ________________________________________
+
 # Question 1
 food = Array.new
 p food
@@ -33,3 +35,21 @@ p drinks
 # Question 8
 food_drinks = food + drinks 
 p food_drinks
+
+# _____ Release 2 ________________________________________
+
+# Question 1
+def add_to_array(arr, item)
+	arr << item
+end
+
+new_arr = add_to_array(["a", "b", "c", 1, 2], 3)
+p new_arr
+
+# Question 2
+def put_into_array(item1, item2, item3)
+	[item1, item2, item3]
+end
+
+fruits = put_into_array("a","b", "c")
+p fruits
