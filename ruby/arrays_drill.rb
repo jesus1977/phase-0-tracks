@@ -26,7 +26,8 @@ p food
 # http://stackoverflow.com/questions/3615700/ruby-what-is-the-easiest-way-to-remove-the-first-element-from-an-array
 
 # Question 6
-p food.include?("pears")
+puts "\nQ6: Ask the array whether it includes a certain item."
+p "Does the food array include 'pears'? : #{food.include?("pears")}"
 
 # Question 7
 drinks = ["Dos XX", "Corona", "Modelo"]
