@@ -57,3 +57,30 @@ puts "We are now asking our clients what preferences you they like. please answe
 		nightstands: nil,
 
 	}
+
+	# add values to keys from what the custoer input
+	client[:name] = name
+	client[:age] = age
+	client[:number_of_children] = number_of_children
+	client[:decor_theme] = decor_theme
+	client[:color] = color
+	client[:chandallers] = chandallers
+	client[:nightstands] = night_stand
+
+	# Print the resluts
+	puts "These are the resluts you asked for : " 
+	client.each { |key, value| puts "#{key} #{value}"}
+	# Ask to see if any changes needed to keys
+	puts "Are there any other changes you would like to make for example change what you put in for decor theme, or age, etc (if no please type 'no')?"
+	# In the reading it said to change the sym  is changing to symbol 
+	new_key = gets.chomp.to_sym
+	# if else state to see if any needed changes. 
+		if new_key == :no
+			else
+				puts "Enter a new value for #{new_key}"
+				 update_value = gets.chomp
+				 client[new_key] = update_value
+		end
+
+	# print the hash again, in its original  hash form
+	puts client
