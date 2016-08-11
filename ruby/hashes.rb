@@ -15,7 +15,7 @@
 puts "We are now asking our clients what preferences you they like. please answer the following questions."
 
 	puts "What's your name"
-	# get the reslut(s)
+	# get the reslut
 	name = gets.chomp
 
 	puts "What is your age?"
@@ -46,7 +46,9 @@ puts "We are now asking our clients what preferences you they like. please answe
 		else
 			night_stand = false
 		end
-# initial hash, or I guess I could have done client = {}
+
+
+	# initial hash, or I guess I could have done client = {}
 	client = {
 		name: nil,
 		age: nil,
