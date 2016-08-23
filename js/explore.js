@@ -19,3 +19,10 @@ function reverse_string(string){
 	return empty_string
 }
 
+name = "Jenny Jones"
+reverse = reverse_string(name)
+
+
+if (1 == 1){
+	console.log(reverse)
+}
