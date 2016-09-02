@@ -20,7 +20,7 @@
 #=> "the usual suspects"
 
 
-"The case of the disappearing last letter".slice(0..-2)
+p "The case of the disappearing last letter".slice(0..-2)
 # => "The case of the disappearing last lette"
 
 p "The mystery of the missing first letter".slice(1..-1)
