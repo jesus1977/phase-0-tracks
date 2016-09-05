@@ -50,4 +50,4 @@ puts class_room[:desk_three][:play_sport][:spring_sport] = "baseball"
 puts " "
 puts "Amy wants to borrow Abrahams calculator (take it from Abraham give it to Amy.)"
 puts class_room[:desk_three][:supplies].delete("calculator")
-puts class_room[:desk_two][:supplies] << 'calculator'
+puts class_room[:desk_two][:supplies] << 'calculator' 
