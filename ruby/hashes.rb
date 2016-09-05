@@ -55,19 +55,17 @@ print_hash(client_hash)
 
 puts "Would you like to update any infromation now, just type in which value you want to update for example (name, age, etc.) or type exit to finhish with no new updates."
 
-new_hash = {}
-loop do 
+
+
 	puts "Enter an item or 'exit'."
-	input = gets.chomp
-  if input == 'exit'
-  	break
+	input = gets.chomp.to_sym
+  if input == :exit
   else
 	input.to_sym
-	puts "Now enter the value you want to chang it to"
+	puts "Now enter the value you want to change it to"
 	value = gets.chomp
-	new_hash << client_hash[input] = value
+	client_hash[input] = value
   end
-end
 
 puts "Here is your new updated list"
-print_hash(new_hash)
+print_hash(client_hash)
