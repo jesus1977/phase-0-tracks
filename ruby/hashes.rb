@@ -1,88 +1,71 @@
-#pseudocode
+# 
 
-# ask each question
-# get the reslut(s)
-# get reslut convert it to interger
-# Ask  a boolean question
-# initial hash, or I guess I could have done client = {}
-# add values to keys from what the custoer input
-# Print the resluts
-# Ask to see if any changes needed to keys
-# In the reading it said to change the sym  is changing to symbol 
-# if else state to see if any needed changes. 
-# print the hash again, in its original  hash form
+client_hash = {}
 
-puts "We are now asking our clients what preferences you they like. please answer the following questions."
+puts "We are going to ask some questions about home design and other questions"
 
-	puts "What's your name"
-	# get the reslut
-	name = gets.chomp
+puts "Whats your name?"
+name = gets.chomp
+client_hash[:name] = name.to_s
 
-	puts "What is your age?"
-	# get reslut convert it to interger
-	age = gets.chomp.to_i
+puts "How old are you?"
+age = gets.chomp
+client_hash[:age] = age.to_i
 
-	puts "How many childeren do you have?"
-	number_of_children = gets.chomp.to_i
+puts "How many childern do you have?"
+childern = gets.chomp
+client_hash[:childern] = childern.to_i
 
-	puts "What decor theme do you prefer"
-	decor_theme = gets.chomp
-	puts "What color do you prefer?"
-	color = gets.chomp
+puts "What kind of decor theme do you like? "
+decor_thme = gets.chomp
+client_hash[:decortheme] = decor_thme.to_s
 
-	# Ask  a boolean question
-	puts "Do you like chandallers? (y/n)"
-	chandallers = gets.chomp
-		if chandallers == "y" || chandallers == "yes"
-			chandallers = true
-		else
-			chandallers = false
-		end
+puts "Do you like wall paper?"
+wall_paper = gets.chomp
+if wall_paper.upcase == "YES"
+	wall_paper = true
+else
+	wall_paper = false
+end
 
-	puts "Do you like night stands? (y/n)"
-	night_stand = gets.chomp
-		if night_stand == "y" || night_stand == "yes"
-			night_stand = true
-		else
-			night_stand = false
-		end
+client_hash[:wall_paper] = wall_paper.to_s
+
+puts "Do you like carpet?"
+carpet = gets.chomp
+if carpet.downcase == "no"
+	carpet = false
+else
+	carpet = true
+end
+
+client_hash[:carpet] = carpet.to_s
+
+puts "Here are your selections"
 
 
-	# initial hash, or I guess I could have done client = {}
-	client = {
-		name: nil,
-		age: nil,
-		number_of_children: nil,
-		decor_theme: nil,
-		color: nil,
-		chandallers: nil,
-		nightstands: nil,
+def print_hash(hash)
+	puts
+	for i in 0...hash.length
+		puts (hash.keys[i].to_s.capitalize + ":" + hash.values[i].to_s)
+	end
+end
 
-	}
+print_hash(client_hash)
 
-	# add values to keys from what the custoer input
-	client[:name] = name
-	client[:age] = age
-	client[:number_of_children] = number_of_children
-	client[:decor_theme] = decor_theme
-	client[:color] = color
-	client[:chandallers] = chandallers
-	client[:nightstands] = night_stand
 
-	# Print the resluts
-	puts "These are the resluts you asked for : " 
-	client.each { |key, value| puts "#{key} #{value}"}
-	# Ask to see if any changes needed to keys
-	puts "Are there any other changes you would like to make for example change what you put in for decor theme, or age, etc (if no please type 'no')?"
-	# In the reading it said to change the sym  is changing to symbol 
-	new_key = gets.chomp.to_sym
-	# if else state to see if any needed changes. 
-		if new_key == :no
-			else
-				puts "Enter a new value for #{new_key}"
-				 update_value = gets.chomp
-				 client[new_key] = update_value
-		end
+puts "Would you like to update any infromation now, just type in which value you want to update for example (name, age, etc.) or type exit to finhish with no new updates."
 
-	# print the hash again, in its original  hash form
-	puts client
+
+
+	puts "Enter an item or 'exit'."
+	input = gets.chomp.to_sym
+  if input == :exit
+  else
+	input.to_sym
+	puts "Now enter the value you want to change it to"
+	value = gets.chomp
+	client_hash[input] = value
+  end
+
+puts "Here is your new updated list"
+print_hash(client_hash)
