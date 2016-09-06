@@ -16,85 +16,87 @@ def agents_name(agent_name)
 		vowels = "aeiou"
 		constants = "bcdfghjklmnpqrstvwxyz"
 
-		# Look at each charater and compare it to vowels or       # constants 
-		# to get location for either one and
-		# return the next character
-		def next_letter(char, letters)
+			# Look at each charater and compare it to vowels or       # constants 
+			# to get location for either one and
+			# return the next character
+			def next_letter(char, letters)
 
-			# from letters string get index and set to charater index
-			char_index = letters.index(char)
+				# from letters string get index and set to charater index
+				char_index = letters.index(char)
 
-			# retain the index and asgin it to letter
-			letter = letters[char_index]
+				# retain the index and asgin it to letter
+				letter = letters[char_index]
 
-			# from char index add one for next index
-			next_index = char_index + 1
+				# from char index add one for next index
+				next_index = char_index + 1
 
-			# from (letters = (vowels or constants)) 
-			# set next letter to new index which is next letter in  # vowels or constants
-			next_letter = letters[next_index]
+				# from (letters = (vowels or constants)) 
+				# set next letter to new index which is next letter in  # vowels or constants
+				next_letter = letters[next_index]
 
-			# next letter could be "u" or "Z" 
-			# if it is set to a if its a vowel or b if its a constant
-			if next_letter == nil
+				# next letter could be "u" or "Z" 
+				# if it is set to a if its a vowel or b if its a constant
+				if next_letter == nil
 
-				if letter == "u"
-						char = "a"
+					if letter == "u"
+							char = "a"
 
-					else
-						  letter == "z"
-							char = "b"
+						else
+							  letter == "z"
+								char = "b"
+					end
+				else
+					# after checking nil then set the next letter to char
+					char = next_letter
 				end
-			else
-				# after checking nil then set the next letter to char
-				char = next_letter
+					# return char (this is what gets back thrown in the   # new map arr)
+				char
 			end
-				# return char (this is what gets back thrown in the   # new map arr)
-			char
-		end
 
-			# Iterate over each character in the array
-			first_or_last_arr = first_or_last_arr.map  do |char|
+				# Iterate over each character in the array
+				first_or_last_arr = first_or_last_arr.map  do |char|
 
-				# if there is vowel then run with vowels paramater
-				if vowels.include?(char)
+					# if there is vowel then run with vowels paramater
+					if vowels.include?(char)
 
-					# call the next_letter method and return the next   # vowel
-					char = next_letter(char, vowels)
+						# call the next_letter method and return the next   # vowel
+						char = next_letter(char, vowels)
 
-					# if there is a constant then run with constant     # parmater
-				elsif constants.include?(char)
+						# if there is a constant then run with constant     # parmater
+					elsif constants.include?(char)
 
-					# call next_letter method and rturn the next constant
-					char = next_letter(char, constants)
-				end
+						# call next_letter method and rturn the next constant
+						char = next_letter(char, constants)
+					end
 			end
 	end
-
+		# call change chars method
 	first_name = change_chars(first_name_arr).join('')
 	last_name = change_chars(last_name_arr).join('')
-
+	# add them together to return last and first
 	entire_name = last_name + " " + first_name
 end
-
+# name variable 
 name = ""
 fake_name = ""
-
+# hash to store names real and fake
 saved_names = {}
-
-while name != "quit"
-
+# while user doesn't type exit run code
+while name != "exit"
+	# ask user to enter a first and last name
 	puts "Enter your name (first and last), and enter quit when finished"
 		name = gets.chomp
+		# while user dosent type exit contiiue to run code
+		if name != "exit"
 
-		if name != "quit"
-
+			# call the agents name method and store it in a fake   # name
 			fake_name = agents_name(name)
+			# used hash and reall name as key and set to fake name 
 			saved_names[name] = fake_name
-
+			# print out fake name
 			puts "You fake agent name is #{fake_name}"
 
 		end
 end
-
+# Iterate over using each print key and value
 saved_names.each { |k, v| puts "Real Name: #{k} Fake Name: #{v}" }
