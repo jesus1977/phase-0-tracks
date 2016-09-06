@@ -1,31 +1,102 @@
+# Pseudocode
+# create a defination that takes a paramater (string)
+# swap the first and last name
 
-# I was not able to get ea vowel or constant
-# I really struggled with this solo, so I just turned in what I could
-# I was really lost with this chanallege, and strings, array, just everything
-# swap first and last name
+def agents_name(agent_name)
+	name = agent_name.split(' ')
+	name_rev = name.reverse
+	# Get an arr from string
+	last_name_arr = name_rev[0].split('')
+	first_name_arr = name_rev[1].split('')
 
-print "What is your first name?"
-first_name = gets.chomp
-client[:first_name] = first_name
-printe "What's your last name?"
-last_name = gets.chomp
-client[:last_name] = last_name
+	# Iterate thru each charater from first or last lame
+	def change_chars(first_or_last_arr)
 
-def change_first(first_name)
-	f_name = first_name.split('')
-f_name.each do | letter |
-	letter.next
+		# Here are our vowels and constants 
+		vowels = "aeiou"
+		constants = "bcdfghjklmnpqrstvwxyz"
+
+			# Look at each charater and compare it to vowels or       # constants 
+			# to get location for either one and
+			# return the next character
+			def next_letter(char, letters)
+
+				# from letters string get index and set to charater index
+				char_index = letters.index(char)
+
+				# retain the index and asgin it to letter
+				letter = letters[char_index]
+
+				# from char index add one for next index
+				next_index = char_index + 1
+
+				# from (letters = (vowels or constants)) 
+				# set next letter to new index which is next letter in  # vowels or constants
+				next_letter = letters[next_index]
+
+				# next letter could be "u" or "Z" 
+				# if it is set to a if its a vowel or b if its a constant
+				if next_letter == nil
+
+					if letter == "u"
+							char = "a"
+
+						else
+							  letter == "z"
+								char = "b"
+					end
+				else
+					# after checking nil then set the next letter to char
+					char = next_letter
+				end
+					# return char (this is what gets back thrown in the   # new map arr)
+				char
+			end
+
+				# Iterate over each character in the array
+				first_or_last_arr = first_or_last_arr.map  do |char|
+
+					# if there is vowel then run with vowels paramater
+					if vowels.include?(char)
+
+						# call the next_letter method and return the next   # vowel
+						char = next_letter(char, vowels)
+
+						# if there is a constant then run with constant     # parmater
+					elsif constants.include?(char)
+
+						# call next_letter method and rturn the next constant
+						char = next_letter(char, constants)
+					end
+			end
+	end
+		# call change chars method
+	first_name = change_chars(first_name_arr).join('')
+	last_name = change_chars(last_name_arr).join('')
+	# add them together to return last and first
+	entire_name = last_name + " " + first_name
 end
+# name variable 
+name = ""
+fake_name = ""
+# hash to store names real and fake
+saved_names = {}
+# while user doesn't type exit run code
+while name != "exit"
+	# ask user to enter a first and last name
+	puts "Enter your name (first and last), and enter quit when finished"
+		name = gets.chomp
+		# while user dosent type exit contiiue to run code
+		if name != "exit"
 
-def change_last(last_name)
-	l_name = last_name.split('')
-	l_name.each do | letter |
-		l_name.next
+			# call the agents name method and store it in a fake   # name
+			fake_name = agents_name(name)
+			# used hash and reall name as key and set to fake name 
+			saved_names[name] = fake_name
+			# print out fake name
+			puts "You fake agent name is #{fake_name}"
+
+		end
 end
-
-
-
-
-
-
-
+# Iterate over using each print key and value
+saved_names.each { |k, v| puts "Real Name: #{k} Fake Name: #{v}" }
