@@ -1,18 +1,22 @@
+
+# Declaring a class
 class Puppy
-	def fetch
-		puts "Go fetch the ball"
-	end
+	# CHARACTERITICS
+	# name
+	# breed
+	# weight
 
-	def roll_over
-		puts "Doggie roll over."
-	end
+	# BEHAVIOR
+	# jump
+	# fetch
+	# bark
 
-	def high_five
-		puts "High five, good job!"
-	end
 end
 
-dog = Puppy.new
-dog.fetch
-dog.roll_over
-dog.high_five
+# creating three seprate instances and setting the to each variable
+duchess = Puppy.new
+fido = Puppy.new
+spot = Puppy.new
+
+
+
