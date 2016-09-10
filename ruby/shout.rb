@@ -1,13 +1,24 @@
 module Shout
-	def self.yell_angrily(words)
-		words + "!!!" + ":("
+	def yell_angrily(words)
+		puts words + "!!!" + ":("
 	end
 
-	def self.yell_happily(words)
-		words + "!!!" + ":)"
+	def yell_happily(words)
+		puts words + "!!!" + ":)"
 	end
 end
 
-Shout.yell_angrily
+class Teacher
+	include Shout 
+end
 
-Shout.yell_happily
+
+class Officer
+	include Shout
+end
+
+teacher = Teacher.new
+teacher.yell_angrily("Quiet down")
+
+officer = Officer.new
+officer.yell_happily("Get down")
