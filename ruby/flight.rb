@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 class Bird
 =======
 module Flight
@@ -9,12 +9,12 @@ end
 
 class Bird
 	include Flight
->>>>>>> feature
+
 
 end
 
 class Plane
-<<<<<<< HEAD
+
 
 end
 =======
@@ -28,5 +28,3 @@ plane = Plane.new
 plane.take_off(30000)
 
 
-
->>>>>>> feature
